@@ -1,0 +1,45 @@
+fun main() {
+    //print("¬ведите строку: ")
+    //val string = readLine()!!.toString()
+    val string = "јртем јн€ јзи€ Ћох ја "
+    var substring = ""
+    var substring1 = ""
+    val space ="  Aaја"
+    var x=0
+    var perr = true
+    var k: Int    
+    val end = string.count()-2
+    val end1 = string.count()-1
+    while (x < end){
+        if ((string[x] == space[1]) || (x == 0)){
+            perr = true
+        }
+        if (x == 0){
+            k=x
+        }
+        else{
+            k= x+1
+        }
+        if ((string[k] == space[2])||(string[k] == space[3])||(string[k] == space[4])||(string[k] == space[5])){
+            while (perr){
+                if ((string[k] == space[1])||(k == end1)){
+                    perr = false
+                }
+                substring1 += string[k]
+                k +=1
+            }
+            if (substring1.count()>4){
+                substring += substring1
+            }
+            substring +=  " "
+            substring1=""
+        }
+        x +=1
+    }
+
+	if (substring == null){
+        println("—лов на 'а' больше 3 символов не найдено")
+    }else{
+        println(substring)
+    }
+}

@@ -1,0 +1,30 @@
+interface bus {
+    val brand: String
+    val ycreation: Int
+    var countp: Int
+    val color: String
+    var speed: Int
+    val number: String
+}
+class citybus(override val brand: String,override val ycreation: Int,override var countp: Int,override val color: String,override var speed: Int,override val number: String) : bus{
+    
+}
+class intercitybus(override val brand: String,override val ycreation: Int,override var countp: Int,override val color: String,override var speed: Int,override val number: String) : bus{
+    
+}
+
+class station(val name:String){
+    fun stop(bus : bus){
+        println("на станцию $name прибыл автобус: марки ${bus.brand},${bus.ycreation} года производства с количеством пассажирских мест ${bus.countp}, цвета ${bus.color}, номер ${bus.number}, с изначальной скоростью ${bus.speed}")
+    }
+}
+
+
+fun main() {
+   val bus1 = citybus("wolsfagen",2000,30,"Red",35,"82C")
+   val bus2 = intercitybus("toyota",2014,20,"Grey",50,"14A")
+   val station1 = station("street Pushkina")
+   station1.stop(bus1)
+   station1.stop(bus2)
+   
+}
